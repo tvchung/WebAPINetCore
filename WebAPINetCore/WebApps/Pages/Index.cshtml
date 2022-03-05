@@ -1,0 +1,23 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script>
+   $(document).ready(function () {
+       $.ajax({
+           url: "https://localhost:44359/api/books/",
+           dataType: "json",
+           type: "GET",
+           success: function (res) {
+               console.log(res);
+           }
+       });
+    });
+</script>
